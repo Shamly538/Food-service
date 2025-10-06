@@ -1,9 +1,10 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Best online Food Delivery Service in India | street food spencer.com</title>
+        <!-- <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+        
+        <title>Best online Food Delivery Service in India | street food spencer.com</title> 
         <!-- link from google it is used to custom fonts-->
         <link  href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
         <!--link from google it is used to give material icon -->
@@ -57,7 +58,7 @@
                      </div><!-- cart  -->
               </ul>
               <div style="margin-left: auto;" id="login-p">
-                     <a href="">
+                     <a href="#">
                             <span class="material-icons">
                                    account_circle
                             </span> <!-- material-icon  -->
@@ -68,12 +69,486 @@
         <script>
               window.addEventListener('scroll',function(){
                      const navbar = document.getElementById('navbar');
-                     if (window.scrollY <=50){
+                     if (window.scrollY <= 50) {
                             navbar.classList.remove('scrolled');
-                     }else{
+                     } else{
                             navbar.classList.add('scrolled');
                      }
               });
         </script>
+
+        <!--  Hero Section -->
+       <section class="hero" style="max-width: 100vw; height: 100vh;overflow:hidden;">
+              <div class="hero-content">
+                     <div>
+                            <h1><i>food <br>&nbsp zone</i></h1>
+                            <div style="display: flex; margin-top: 40px;">
+                                   <div class="line"></div>
+                                   <p>welcome to Street Food Spencer <br> Best Offers - Limited Time Only! </p>
+                            </div>
+                            <h4>Free Delivery : +912345678912 </h4>
+                            <form class="search-form">
+                                   <div class="location-dropdown">
+                                          <select name="location" >
+                                                 <option value="Chennai">Chennai</option>
+                                                 <option value="Mumbai">Mumbai</option>
+                                                 <option value="Delhi">Delhi</option>
+                                                 <option value="Bangalore">Bangalore</option>
+                                                 <option value="Hyderabad">Hyderabad</option>
+                                                 <option value="Kolkata">Kolkata</option>
+                                                 <option value="Pune">Pune</option>
+                                                 <option value="Ahmedabad">Ahmedabad</option>
+                                                 <option value="Jaipur">Jaipur</option>
+                                                 <option value="Lucknow">Lucknow</option>
+                                          </select> 
+                                   </div> <!-- location  dropdown  -->
+                                   <img style="position: absolute; bottom: -50px; left: 250px; width: 150px; margin-top: 100px; opacity: 0.8;" src="images\download.png" alt="">
+                                   <div class="search-input">
+                                          <input type="text" placeholder="Search for restaurant, cuisine or a dish ">
+                                          <button type="submit">
+                                                 <i class="material-icons">search</i>
+                                                 <link rel="stylesheet" 
+                                                 href="https://fonts.googleapis.com/css2?family=Material+Icons">
+                                          </button>
+                                   </div>  <!--   search - input   -->
+                            
+                            </form><!--   search - form   -->
+                     </div>  
+                     <div class="item-container">
+                            <div class="item-content">
+                                   <img src="images\images.jpg" alt="">
+                                   <p>Mexican Food <br> plate of Mexican food Tacos</p>
+                            </div> <!--  item - content  -->
+                            <div class="item-content">
+                                   <img src="images\images 12345.jpg" alt="">
+                                   <p>delicious  <br>thai food</p>
+                            </div>   <!--  item - content  -->
+                            <div class="item-content">
+                                   <img src="\images\images 5667e578.jpg" alt="">
+                                   <p>fresh chicken roast </p>
+                            </div> <!--  item - content  -->
+                     </div>    <!--  item - container  -->
+              </div>   <!--  hero - content  -->
+
+              <div style="position: absolute;">
+                     <div class="hero-bg">
+                            <div class="hero-bg-color"></div>
+                            <div class="plate-shadow"></div>
+                            <div class="hero-bg-img">
+                                   <img src="\images\istockphoto-1472680285-612x612.jpg" alt="">
+                            </div>    <!--  hero - bg - img  -->
+                     </div>    <!--  hero - bg  -->
+              </div>
+
+              <script>
+                     gsap.from(".hero",{
+                            opacity:0,
+                            y:50,
+                            stagger: 0.3,
+                            duration: 1,
+                            ease: "power2.out"
+                     });
+
+                     //GSAP Animation for food items coming into view
+                     gsap.registerPlugin(ScrollTrigger);
+
+                     gsap.from(".food-item",{
+                            opacity: 0,
+                            y: 50,
+                            duration: 0.8,
+                            stagger: 0.3,  //Delay between each item
+                            ScrollTrigger: {
+                                   trigger: ".food-item",  //The element to trigger the animation
+                                   start: "top 80%", //When the element enters 80% of the viewpoint
+                                   toggleAction: "play none none none"
+                            }
+                     });
+                     gsap.from(".item-content",{
+                            opacity: 0,
+                            y: 30,
+                            duration: 0.8,
+                            stagger: 0.3,  //Time gap between each item's animation
+                            ease: "power2.out",
+                            delay: 0.3  //Optional: Initial delay before the items start animation
+                     });
+
+                     //GSAP Animation for elements coming into view (food items)
+                     gsap.registerPlugin(ScrollTrigger);
+
+                     //Animation each .food-item when it comes into view
+                     gsap.from(".food-item",{
+                            opacity: 0,
+                            y: 50,
+                            duration: 0.8,
+                            stagger: 0.3,  //Delay between each item
+                            ScrollTrigger: {
+                                   trigger: ".food-item", //The element to trigger the animation
+                                   start: "top 80%",  //when the element enters 80% of the viewport
+                                   toggleAction: "play none none none"
+                            }
+                     });
+
+              </script>
+       </section>  <!--  hero  -->
+
+          <!--  Service Section  -->
+          
+       <section id="services-container">
+              <h1 class="h-primary">Our Services</h1>
+              <div id="services">
+                     <div class="box">
+                            <img src="images\lunch-menu-cards.avif" alt="Food Ordering">
+                            <h2 class="h-secondary">Food Ordering</h2>
+                            <p>"Craving something delicious? Browse, order, and enjoy at the tap of a button!"</p>
+                     </div>  <!-- box  -->
+                     <div class="box">
+                            <img src="images\fast delivery.jpg" alt="Delivery or Pickup">
+                            <h2 class="h-secondary">Delivery or Pickup</h2>
+                            <p>"Hot and Fresh, delivered straight to your door-whenever you want it! Prefer to pick it up? Order ahead, and skip the wait!"</p>
+                     </div>  <!-- box  -->
+                     <div class="box">
+                            <img src="images\meals.jpg" alt="Receipe and meal kits">
+                            <h2 class="h-secondary"> Receipe and Meal Kits</h2>
+                            <p>Create restaurant-quality meals at home with our easy, read</p>
+                     </div>  <!-- box  -->
+              </div>  <!--  services   -->
+       </section>   <!--  service- container  -->
+
+
+       <section id="reviews">
+              <h2>Top Restaurants Around You</h2>
+              <div class="reviews-container">
+                     <!-- Review 1   -->
+                      <div class="review-box">
+                            <div class="restaurant-name">The Indian Cuisine</div>
+                            <img src="\images\Indian cuisine restaurant.jpg" alt="Restaurant 1 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Good food, great service!</p>
+                      </div>  <!--  review-box  -->
+                     
+                     <!--  Review 2  -->
+                       <div class="review-box">
+                            <div class="restaurant-name">Chinese Wock</div>
+                            <img src="\images\chinese woke restaurant.jpg" alt="Restaurant 2 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Delicious meals delivered fast.</p>
+                       </div>  <!--  review-box  -->
+
+                     <!--  Review 3  -->
+                       <div class="review-box">
+                            <div class="restaurant-name">Paragon</div>
+                            <img src="\images\paragon restaurant.jpg" alt="Restaurant 3 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Wold famous Biriyani in Kozhikkode.</p>
+                       </div>  <!--  review-box  -->
+
+                     <!--  Review 4  --> 
+                       <div class="review-box">
+                            <div class="restaurant-name">Taj</div>
+                            <img src="\images\Taj hotel.jpg" alt="Restaurant 4 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Awesome food service</p>
+                       </div>  <!--  review-box  -->
+
+                     <!--  Review 5  -->
+                        <div class="review-box">
+                            <div class="restaurant-name"> Indian Coffee House</div>
+                            <img src="\images\indian coffee office.jpg" alt="Restaurant 5 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Fresh food Fresh experience</p>
+                        </div>   <!--  review-box  -->
+
+                     <!--  Review 6  -->
+                       <div class="review-box">
+                            <div class="restaurant-name">Restaurant Chef Pillai</div>
+                            <img src="\images\Restaurant cheff pillai.jpg" alt="Restaurant 6 Photo" class="restaurant-image">
+                            <p class="restaurant-tagline">Exceptional taste, every time</p>
+                       </div>   <!--  review-box  -->
+              </div>   <!--  reviews-container  -->
+       </section>   <!--  reviews  -->
+
+
+       <!-- New Food scrolling section starts here  -->
+       <section id="food-section">
+              <h2>What's on your mind?</h2>
+              <div class="scroll-container">
+                     <div class="food-item">
+                            <img src="\images\Biriyani.jpg" alt="Biriyani" class="image-placeholder">
+                            <p>Biriyani</p>
+                     </div>  <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\Sadya.jpg" alt="Sadya" class="image-placeholder">
+                            <p>Sadya</p>
+                     </div>   <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\masala dosa.jpg" alt="Masala Dosa" class="image-placeholder">
+                            <p>Masala Dosa</p>
+                     </div>  <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\pizza.jpg" alt="Pizza" class="image-placeholder">
+                            <p>Pizza</p>
+                     </div>  <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\burger.jpg" alt="burger" class="image-placeholder">
+                            <p>burger</p>
+                     </div> <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\cake.jpg" alt="cake" class="image-placeholder">
+                            <p>Cake</p>
+                     </div>  <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\chineese food.jpg" alt="chineese food" class="image-placeholder">
+                            <p>Chineese Food</p>
+                     </div>   <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\rolls.jpg" alt="rolls" class="image-placeholder">
+                            <p>Rolls</p>
+                     </div>   <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\salad.jpg" alt="Salad" class="image-placeholder">
+                            <p>Salad</p>
+                     </div>   <!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\pasta.jpg" alt="pasta" class="image-placeholder">
+                            <p>Pasta</p>
+                     </div><!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\tacos.jpg" alt="Tacos" class="image-placeholder">
+                            <p>Tacos</p>
+                     </div><!--  food-item  -->
+                     <div class="food-item">
+                            <img src="\images\sushi.jpg" alt="sushi" class="image-placeholder">
+                            <p>Sushi</p>
+                     </div><!--  food-item  -->
+              </div>   <!--  scroll-container  -->
+       </section>   <!--  food-section  -->
+
+
+       <!--  Pick your meal  -->
+       <section class="meal-section">
+              <h2>Pick your meal</h2>
+              <div class="meal-container">
+                     <!--  Breakfast Box  -->
+                       <div class="meal-box">
+                            <div class="meal-info">
+                                   <img src="\images\breakfast.jpg" alt="Breakfast" class="meal-image">
+                                   <div>
+                                          <h4><a href="" class="button-link">Breakfast</a></h4>
+                                          <p>Healthy & Delicious </p>
+                                   </div>
+                            </div>   <!--  meal-info   -->
+                            <p>"Start your day with our heart breakfast options!"</p>
+                       </div>    <!--  meal-box  -->
+                       
+                       <!-- Lunch Box  -->
+                       <div class="meal-box">
+                            <div class="meal-info">
+                                   <img src="\images\lunch.jpg" alt="Lunch" class="meal-image">
+                                   <div>
+                                          <h4><a href="" class="button-link">Lunch</a></h4>
+                                          <p>Fresh & Flavourful</p>
+                                   </div>
+                            </div>  <!--  meal-info   -->
+                            <p>"Fuel up with a satisfying lunch to get through the day!"</p>
+                       </div>   <!--  meal-box  -->
+
+                       <!--  Dinner Box  -->
+                         <div class="meal-box">
+                            <div class="meal-info">
+                                   <img src="\images\Dinner.jpg" alt="Dinner" class="meal-image">
+                                   <div>
+                                          <h4><a href="" class="button-link">Dinner</a></h4>
+                                          <p>Hearty & Filling</p>
+                                   </div>
+                            </div>  <!--  meal-info   -->
+                            <p>"End your day with a delightful dinner"</p>
+                         </div>   <!--  meal-box  -->
+
+                         <!--  Snacks Box  -->
+                           <div class="meal-box">
+                            <div class="meal-info">
+                                   <img src="\images\tea snack.jpg" alt="Snacks" class="meal-image">
+                                   <div>
+                                          <h4><a href="" class="button-link">Snacks</a></h4>
+                                          <p>Quick & Tasty</p>
+                                   </div>
+                            </div>   <!--  meal-info   -->
+                            <p>"Craving a snack? We've got you covered!"</p>
+                           </div>  <!--  meal-box  -->
+              </div>
+       </section>
+
+       <!--  Best Offer Section  -->
+       <section class="best-offers-section">
+              <h2>Best Offers</h2>
+              <div class="menu-items" id="menu-items">
+                     <!--  Food items will be displayed here dynamically  -->
+              </div>  <!--  menu-items  -->
+              <script>
+                     const menuItemsContainer = document.getElementById('menu-items');
+
+                     const menuData = [
+                            {
+                                   name: 'Pancakes',
+                                   description: 'Fluffy pancakes served with maple syrup, fresh berries',
+                                   price: '107.99',
+                                   image: 'images/pancake.jpg',
+                                   offer: '10% off on first order!'
+                            },
+
+                            {
+                                   name: 'French Toast',
+                                   description: 'Golden slices of bread soaked in egg mixture',
+                                   price: '80.99',
+                                   image: 'images/french toast.jpg',
+                                   offer: 'Buy 1 Get 1 Free!'
+                            },
+
+                            {
+                                   name: 'Omelette',
+                                   description: 'A savory, satisfying dish featuring a fluffy, golden omelette filled with tender, sautéed mushrooms',
+                                   price: '169.99',
+                                   image: 'images/mushroom omelette.jpg',
+                                   offer: 'Free drink with every order!'
+                            },
+
+                            {
+                                   name: 'Biriyani',
+                                   description: 'A flavorful, savory, one-pot dish of tender, spiced chicken and long-grain rice layered and slow-cooked to perfection, often featuring aromatic ingredients like saffron, fried onions, and fresh herbs. ',
+                                   price: '510.99',
+                                   image: 'images/chicken biriyani.jpg',
+                                   offer:'20% off on weekends!'
+                            },
+                     ];
+
+                     // Initialize cart from localstorage
+                     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                     //Function to add item to cart
+                     function addToCart(item) {
+                            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                            cart.push(item);  //Add a new item to the cart
+                            localStorage.setItem('cart',JSON.stringify(cart));  //Save the updated item
+                            alert(`${item.name} has been added to your cart!`); //confirmation
+                     }
+
+                     //Function to show menu items
+                     function showMenu() {
+                            menuItemsContainer.innerHTML = ''; //Clear the container
+                            //Loop through the entire menuData array and create HTML elements for a each food item
+                            menuData.forEach(item => {
+                                   const itemElement = document.createElement('div');
+                                   itemElement.classList.add('food-item');
+                                  
+                                   itemElement.innerHTML = `
+                                   <img src="${item.image}" alt="${item.name}">
+                                   <h3>${item.name}</h3>
+                                   <p>${item.description}</p>
+                                   <p class="price">${item.price}</p>
+                                   <div class="offer">${item.offer}</div>
+                                   <button class="add-to-cart-btn" data-name="${item.name}"data-price="${item.price}" >
+                                          Add to Cart
+                                   </button>
+                                   `;  
+                                   
+                           
+
+                     //Add event listener for "Add to Cart"
+                     const addToCartBtn = itemElement.querySelector('.add-to-cart-btn');
+                     addToCartBtn.addEventListener('click',function(event) {
+                            const cartItem = {
+                                   name: item.name,
+                                   price: item.price,
+                                   description:item.description,
+                                   image:item.image,
+                                   offer:item.offer
+                            };
+                            addToCart(cartItem);  //Call the function to add item to cart
+                     });
+
+                     //Append the food item to the container
+                     menuItemsContainer.appendChild(itemElement);
+               });
+              }
+
+              // Call the function to show the menu when the page loads
+              showMenu();
+              </script>
+             
+       </section>      <!--  Best offers section  -->
+
+
+       <!--  This is next section of top trending place  -->
+         <section class="collections-section">
+              <h1>Top Trending Places</h1>
+              <p>Explore the top trending spots in the city for dining, entertainment, and more.</p>
+              <div class="collection-grid">
+                     <div class="collection-box">
+                            <img src="images\trending1.jpg" alt="Newly Opened Places">
+                            <div class="info">
+                                   <h3><a href="https://mcindia.com/" style="color: white;">MC Donald </a></h3>
+                            </div>  <!-- info -->
+                     </div> <!--  collection-box  -->
+
+                     <div class="collection-box">
+                            <img src="\images\trending2.jpg" alt="Top Trending Spots">
+                            <div class="info">
+                                   <h3><a href="https://online.kfc.co.in/" style="color: white;">KFC</a></h3>
+                            </div>  <!-- info -->
+                     </div>  <!--  collection-box  -->
+
+                     <div class="collection-box">
+                            <img src="\images\trending3.jpg" alt="Best Insta-worthy Places">
+                            <div class="info">
+                                   <h3><a href="https://www.burgerking.in/" style="color: white;">Burger King</a></h3>
+                                   </h3>
+                            </div>   <!-- info -->
+                     </div>   <!--  collection-box  -->
+
+                     <div class="collection-box">
+                            <img src="\images\trending4.jpg" alt="South Indian Special">
+                            <div class="info">
+                                   <h3><a href="https://www.pizzahut.co.in/" style="color: white;">Pizza Hut</a></h3>
+                            </div>    <!-- info -->
+                     </div>   <!--  collection-box  -->
+              </div>   <!-- collection-grid  -->
+         </section>  <!--  Collection- section   -->
+
+
+         <footer class="section-p1">
+              <div class="col">
+                     <h4>Contact</h4>
+                     <p><strong>Address: </strong>562 Wellington Road,Street 32,San Fransiscan</p>
+                     <p><strong>Phone: </strong>+01 2222 345/ (+91) 01 2345 6789</p>
+                     <p><strong>Hours:</strong>10:00 18:00, Mon Sat</p>
+              </div>  <!--  col  -->
+              <div class="col">
+                     <h4>About</h4>
+                     <a href="#">About us</a>
+                     <a href="#">Delivery Information</a>
+                     <a href="#">Privacy Policy</a>
+                     <a href="#">Terms & Conditions</a>
+                     <a href="#">Contact Us</a>
+              </div>   <!--  col  -->
+              <div class="col">
+                     <h4>My Account</h4>
+                     <a href="#">Sign In</a>
+                     <a href="#">View Cart</a>
+                     <a href="#">My Wishlist</a>
+                     <a href="#">Track My Order</a>
+                     <a href="#">Help</a>
+              </div>  <!--  col  -->
+              <div class="col install">
+                     <h4>Install App</h4>
+                     <p>From App Store or Google Play</p>
+                     <div class="row">
+                            <img src="\images\appstore.png" alt="">
+                            <img src="\images\google playstore.png" alt="">
+                     </div><!--  row  -->
+                     <p>Secured Payment Gateways</p>
+                     <img src="\images\payment card.jpg" alt="">
+              </div>  <!--  col  -->
+              <div class="copyright">
+                     <p>© 2024, Street Food Spencer</p>
+              </div>  <!--  copyright  -->
+         </footer>  <!--  section-p1  -->
+
  </body>
  </html>
+
+ 
