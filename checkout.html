@@ -1,0 +1,359 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+        <!-- <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
+        
+        <title>Best online Food Delivery Service in India | street food spencer.com</title> 
+        <!-- link from google it is used to custom fonts-->
+        <link  href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+        <!--link from google it is used to give material icon -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" >
+        <!-- customizing the fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- javascript libraries and to provide the animation and transition to our webpage -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+        
+        <link rel="stylesheet" href="checkout.css">
+
+ </head>
+ <body>
+       <nav id="navbar">
+              <div id="logo">
+                     <img src="images\steak.webp" alt="street food spencer"> <!-- website name -->
+              </div> <!--logo-->
+              <ul>
+                     <div class="home">
+                            <span class="material-icons">
+                            home
+                            </span><!-- material-icons -->
+                            <li class="item"><a href="index.html">Home</a></li>
+                     </div><!-- home -->
+                     <div class="about">
+                            <li class="item"><a href="about.html">About Us</a></li>
+                     </div><!-- about  -->
+                     <div class="Food">
+                            <li class="item"><a href="Add.html">Meals</a> </li>
+                            <span class="material-icons">
+                                   fastfood
+                            </span>
+                     </div> <!-- food  -->
+                     <div class="Food">
+                            <li class="item"><a href="#"> Reserve Table</a></li>
+                            <span class="material-icons">
+                                   restaurant
+                            </span> <!-- material-icons  -->
+                     </div> <!-- Food  -->
+                     <div class="con">
+                            <li class="item"><a href="contact.html">Contact Us</a></li>
+                            <span class="material-icons">
+                                   contacts_product
+                            </span> <!-- material-icons  -->
+                     </div> <!-- con  -->
+                     <div class="car">
+                            <li class="item"> <a href="cart.html">Cart</a></li>
+                            <span class="material-icons">
+                                   shopping_cart
+                            </span>  <!-- material-icons  -->
+                     </div><!-- cart  -->
+              </ul>
+              <div style="margin-left: auto;" id="login-p">
+                     <a href="#">
+                            <span class="material-icons">
+                                   account_circle
+                            </span> <!-- material-icon  -->
+                     </a>
+              </div> <!-- login-p -->
+       </nav>  <!-- navbar  -->
+
+
+       <!-- Checkout Section  -->
+        <div class="container">
+            <h1>Checkout</h1>
+            <div class="checkout-grid">
+                <!-- Checkout Form Section -->
+                 <div class="checkout-form">
+                    <h2>Shipping Information</h2>
+                    <form action="" id="checkout-form">
+                        <label for="name"> Full Name</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email"> Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="address"> Address</label>
+                        <input type="text" id="address" name="address" required>
+
+                        <label for="city"> City</label>
+                        <input type="text" id="city" name="city" required>
+
+                        <label for="zip"> ZIP Code</label>
+                        <input type="number" id="zip" name="zip" required>
+
+                        <label for="phone"> Phone Number</label>
+                        <input type="number" id="phone" name="phone" required>
+
+                        <h2>Payment Information</h2>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" value="card" checked>
+                                Credit Card
+                            </label> <!-- Payment option -->
+
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" value="cod" >
+                                COD
+                            </label> <!-- Payment option -->
+                        </div>  <!-- Payment options -->
+
+                                <div id="card-details" class="payment-section">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name" name="card-name">
+
+                                    <label for="card-number">Card Number</label>
+                                    <input type="number" id="card-number" name="card-number">
+
+                                    <label for="exp-date">Expiration Date</label>
+                                    <input type="text" id="exp-date" name="exp-date" placeholder="exp-date">
+
+                                    <label for="cvv">CVV</label>
+                                    <input type="number" id="cvv" name="cvv">
+                                </div> <!-- Card-details .payment-section -->
+
+                        
+                    </form> <!-- #Checkout-form  -->
+                 </div><!-- .Checkout-form  -->
+
+                 <!-- Cart Items Section -->
+                  <div class="cart-items-section">
+                    <h2>Your Cart Items</h2>
+                    <div id="cart-items-container" class="cart-items"></div>
+                    <h2>Order Summary</h2>
+                    <div class="price-summary">
+                     <p>Subtotal: <span id="subtotal">$0.00</span> </p>
+                     <p>Shipping: <span id="shipping">$5.00</span></p>
+                     <p class="total">Total: <span id="total">$5.00</span> </p>
+                    </div>  <!--   .price-summary   -->
+                    <button id="open" type="submit">Proceed</button>
+                  </div>  <!--  .cart-items-section   -->
+
+                  <!--  Popup Modal  -->
+                    <div id="popupModal" class="modal">
+                     <div class="modal-content">
+                            <span class="close-btn">&times;</span>
+                            <img src="data:image/jpeg;base64,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" alt="Success" style="width: 50px;">
+                            <h2>Thank You!</h2>
+                            <p>Your order have been successfully placed. Thank You!</p>
+                            <button id="okBtn">OK</button>
+                     </div>   <!--  modal-content  -->
+                    </div>    <!--  #popupModal .modal  -->
+            </div>  <!--  .checkout-grid   -->
+        </div>   <!--  .container  -->
+
+
+        <!--  Footer section  -->
+       <footer class="section-p1">
+              <div class="col">
+                     <h4>Contact</h4>
+                     <p><strong>Address: </strong>562 Wellington Road,Street 32,San Fransiscan</p>
+                     <p><strong>Phone: </strong>+01 2222 345/ (+91) 01 2345 6789</p>
+                     <p><strong>Hours:</strong>10:00 18:00, Mon Sat</p>
+              </div>  <!--  col  -->
+              <div class="col">
+                     <h4>About</h4>
+                     <a href="#">About us</a>
+                     <a href="#">Delivery Information</a>
+                     <a href="#">Privacy Policy</a>
+                     <a href="#">Terms & Conditions</a>
+                     <a href="#">Contact Us</a>
+              </div>   <!--  col  -->
+              <div class="col">
+                     <h4>My Account</h4>
+                     <a href="#">Sign In</a>
+                     <a href="#">View Cart</a>
+                     <a href="#">My Wishlist</a>
+                     <a href="#">Track My Order</a>
+                     <a href="#">Help</a>
+              </div>  <!--  col  -->
+              <div class="col install">
+                     <h4>Install App</h4>
+                     <p>From App Store or Google Play</p>
+                     <div class="row">
+                            <img src="\images\appstore.png" alt="">
+                            <img src="\images\google playstore.png" alt="">
+                     </div><!--  row  -->
+                     <p>Secured Payment Gateways</p>
+                     <img src="\images\payment card.jpg" alt="">
+              </div>  <!--  col  -->
+              <div class="copyright">
+                     <p>© 2024, Street Food Spencer</p>
+              </div>  <!--  copyright  -->
+         </footer>  <!--  section-p1  -->
+ </body>
+
+         <script>
+
+              //JavaScript to toggle payment method fields
+              const paymentMethodRadios = document.querySelectorAll('input[name="payment-method"]');
+              const cardDetailsSection = document.getElementById('card-details');
+
+              paymentMethodRadios.forEach(radio => {
+                     radio.addEventListener('change', function() {
+                            if(this.value === 'card') {
+                                   cardDetailsSection.style.display = 'block';
+                            }
+                            else if(this.value === 'cod') {
+                                   cardDetailsSection.style.display = 'none';
+                            }
+                     });
+              });
+
+              //Function to calculate and display subtotal, shipping, and total 
+              function calculateTotals() {
+                     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                     const subtotalElement = document.getElementById('subtotal');
+                     const totalElement = document.getElementById('total');
+                     const shippingElement = document.getElementById('shipping');
+
+                     let subtotal = 0;
+                     cart.forEach(item => {
+                            subtotal += parseFloat(item.price);   //Accumulate subtotal 
+                     });
+
+                     // Shipping is fixed at $5.00
+                     const shipping = 5.00;
+                     const total = subtotal + shipping;
+
+                     // Update the DOM elements
+                     subtotalElement.innerText = `${subtotal.toFixed(2)}`;
+                     totalElement.innerText = `${total.toFixed(2)}`;
+                     shippingElement.innerText = `${shipping.toFixed(2)}`;
+
+              }
+
+              //function to render cart items
+              function renderCartItems() {
+                     const cartItemsContainer = document.getElementById('cart-items-container');
+                     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                     cartItemsContainer.innerHTML = '';
+
+                     cart.forEach(item => {
+                            const itemElement = document.createElement('div');
+                            itemElement.classList.add('cart-item');
+                            itemElement.innerHTML = `
+                                   <img src="${item.image}" alt="${item.name}">
+                                   <h3>${item.name}</h3>
+                                   <p>${item.description}</p>
+                                   <p class="price">${item.price}</p>
+                                   `;
+                                   cartItemsContainer.appendChild(itemElement);
+
+                     });
+              }
+
+              // On page load, calculate totals and render cart items
+              window.onload = function () {
+                     calculateTotals();
+                     renderCartItems();
+              };
+
+              document.getElementById('checkout-form').addEventListener('submit',function(event){
+              event.preventDefault();  //Prevent form submission to validate fields fill
+
+              // Validate form fields
+              const name = document.getElementById('name').value.trim();
+              const email = document.getElementById('email').value.trim();
+              const address = document.getElementById('address').value.trim();
+              const city = document.getElementById('city').value.trim();
+              const zip = document.getElementById('zip').value.trim();
+              const phone = document.getElementById('phone').value.trim();
+              const paymentMethod = document.querySelector('input[name="payment-method"]').value.trim();
+         
+              let isValid = true;  //Assume form is valid
+
+              // Check for empty fields
+              if(!name || !email || !address || !city || !zip || !phone) {
+                     alert('Please fill in all the shipping informatio.');
+                     isValid = false;
+              }
+
+              // Validate Credit Card fields if the 'Credit Card' option is selected
+              if(paymentMethod === 'card') {
+                     const cardName = document.getElementById('card-name').value.trim();
+                     const cardNumber = document.getElementById('card-number').value.trim();
+                     const expDate = document.getElementById('exp-date').value.trim();
+                     const cvv = document.getElementById('cvv').value.trim();
+
+                     if(!cardName || !cardNumber || !expDate || !cvv) {
+                            alert('Please fill in all the credit card details.');
+                            isValid = false;
+                     }
+                     else if(cardNumber.length !==16 || !/^\d+$/.test*cardNumber) {
+                            alert('Please enter a valid 16-digit card number.');
+                            isValid = false;
+                     }
+                     else if(cvv.length !== 3 || !/^\d+$/.test(cvv)) {
+                            alert('Please enter a valid 3-digit cvv.');
+                            isValid = false;
+                     }
+              }
+              
+              //if the form is valid, proceed with the order
+              if(isValid) {
+                     document.getElementById('popupModal').style.display = 'block'; // Show PopupModal
+
+                     //Clear the form foelds(optional)
+                     document.getElementById('checkout-form').reset();
+
+                     //clear the cart from local storage after successfully checkout
+                     localStorage.removeItem('cart');
+
+                     //update cart display (optional)
+                     renderCartItems();
+                     calculateTotals();
+              }
+              });
+         
+
+              document.addEventListener("DOMContentLoaded", function(){
+
+                     //Handling the submit button click to show the modal
+                     document.getElementById("open").addEventListener("click", function(event){
+                            event.preventDefault();  //Prevent form submission if it's inside a 
+
+                            //Display the modal
+                            document.getElementById("popupModal").style.display = "flex";
+                     });
+
+                     //Close the modal when the Ok button is clicked and to home page
+                     document.getElementById("okBtn").addEventListener("click",function(){
+                            
+                            //Hide the modal
+                            document.getElementById("popupModal").style.display = "none";
+
+                            //Redirect to home page
+                            window.location.href = "index.html" // Change this to your desired page
+                     });
+
+                     // Close the modal when clicking on the close button(x)
+                     document.querySelector(".close-btn").addEventListener("click",function(){
+                                   document.getElementById("popupModal").style.display = 'none';
+                     });
+
+                     // Close modal when user clicks 'OK'
+                     document.getElementById('okBtn').addEventListener('click', function(){
+                            document.getElementById('popupModal').style.display = 'none';
+                     });
+
+                     // Close modal when user clicks 'x'
+                     document.getElementById('.close-btn').addEventListener('click', function(){
+                            document.getElementById('popupModal').style.display = 'none';
+                     });
+
+                    
+              });
+           </script>
+
+
+ </html>
