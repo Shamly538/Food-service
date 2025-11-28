@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables */
+:root{
+    --navbar-height :59px;
+}
+
+/* Overall styles for the navbar */
+#navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgb(236,235,235); /* Background color when at the top */
+    color: black;  /* Text color when at the top */
+    padding: 15px 50px; /* increased padding at the top */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s, color 0.5s, padding 0.5s; /* Smooth transition for all changes */
+}
+
+/* Navbar styles when scrolled */
+#navbar.scrolled{
+    background-color: black; /* change background color when scrolled */
+    color: white;           /* change text color when scrolled */
+    padding: 10px 20px;       /* Default padding */
+    box-shadow: none;       /* optional change shadow */
+}
+
+/* Icon styling */
+.material-icons{
+    color: black;   /* Icon color when at the top */
+    transition:  color 0.3s; /* Smooth transition for icon color */
+}
+
+#navbar.scrolled .material-icons {
+    color: white; /* Icon color when scrolled */
+}
+
+/* Logo styling */
+#logo img {
+    height: 50px; /* Adjust as necessary */
+}
+
+/* Styles for the navigation list */
+#navbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 0;  /* Align list to the left */
+}
+
+/* Individual items within the navbar */
+#navbar .home,
+#navbar .about,
+#navbar .Food,
+#navbar .con,
+#navbar .car{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Link styles */
+#navbar .item a {
+    text-decoration: none; /* Remove underline */
+    color: rgb(0, 0, 0); /* Link color when at the top */
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;   /* Smooth transition for hover effect */
+}
+
+ /* Link hover styles */
+ #navbar .item a:hover {
+    color: #ffffff;   /* Gold color on hover */
+    background-color: black;   /* change background on hover */
+    border-radius: 25px;
+ }
+ #navbar.scrolled .item a {
+    color: rgb(255, 255, 255);  /* Link color when scrolled (white) */
+ }
+
+  /* Link hover styles when scrolled */
+#navbar.scrolled .item a:hover {
+    color: #ffffff;  /* Gold color on hover */
+    background-color: black;   /* Change background on hover */
+}
+ /* Right-aligned items in the navbar */
+ #navbar ul {
+    margin-left: auto;
+ }
+
+  /* Button styles */
+#navbar .item {
+    transition: color 0.3s;  /* Smooth transition for item colors */
+}
+
+ /* Login section */
+ #login-p {
+    display: flex;   /* Make it a flex container */
+    align-items: center;   /* cener items vertically */
+    margin-left: auto;   /* push the login section to the right */
+ }
+
+ #login-p a {
+    text-decoration: none;  /* Remove underline */
+    color: white;  /* Link color */
+    padding: 10px;
+    transition: color 0.3s;  /* Smooth transition for hover effect */
+ }
+
+ #login-p a:hover {
+    color: #FFD700;
+    background-color: #FFD700;  /*Gold color on hover */
+    border-radius: 25PX;
+}
+
+ /* Additional styling for all items to align left */
+ #navbar > div,
+ #navbar ul > div {
+    display: flex;   /* Ensure all items use flex layout */
+    align-items: center;  /* Center items vertically */
+    margin: 0;  /* Remove default margins */
+ }
+
+
+/* Checkout Section  */
+.container {
+    max-width: 1200;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/*Grid Layout for checkout form and cart items */
+.checkout-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Checkout form styling */
+.checkout-form, .cart-items-section {
+    width: 48%;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: slideInLeft 0.8s ease-in-out;
+}
+
+/* Form Input styling */
+.checkout-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.checkout-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.checkout-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+/* Payment method Radio Buttons */
+.checkout-form h2 {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    animation: fadeIn 1s ease;
+}
+.payment-options {
+    display: flex;
+    margin-top: 1px;
+    margin-right: 10px;
+}
+.payment-option {
+    display: flex;  /* create a flex container */
+    align-items: center;  /*Center items vertically */ 
+    margin: 1px; /* Add spacing between options */ 
+}
+.payment-option input[type="radio"] {
+    margin-top: 5px; /*space between radiobutton and label */
+    /*display: inline-block; */
+}
+.payment-option {
+    font-size: 1rem;
+    margin-top: -5px;
+}
+
+/* Price summary */
+.price-summary {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideInRight 0.8s ease;
+}
+.price-summary p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Cart Items Styling */
+
+.cart-items-section {
+    border-left: 4px solid #007bff;
+    animation: slideInRight 0.8s ease-in-out;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 2px dashed #ddd;
+    transition: all 0.4s ease;
+}
+.cart-item:hover {
+    background-color: #f9f9f9;
+    transform: translateX(5px);
+}
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.cart-item img:hover {
+    transform: scale(1.1);
+}
+.cart-item h3 {
+    flex-grow: 1;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+.cart-item .price {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Button Styling */
+button[type="submit"], .checkout-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    box-shadow: 0 8px 20px rgba(0,123,255,0.3);
+    transform: translateY(-3px);
+}
+
+/* Modal styling */
+.modal {
+    display: none;  /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}
+#okBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#okBtn:hover {
+    background-color: #45a049;
+}
+
+/* Input Hover Effects */
+input:hover {
+    background-color: #f0f0f0;
+    transition: all 0.2s ease-in;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width : 768px) {
+    .checkout-grid {
+        flex-direction: column;
+    }
+    .checkout-form, .cart-items-section {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes sliddeInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+ /*  Footer styling */
+
+footer, footer * {
+    margin: 0;
+    padding: 0;
+    background-color: #ccc;
+}
+
+/* Main Footer Styling*/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    justify-content: space-between;
+    padding: 0;  /* Remove any padding from the footer itself */
+}
+
+/* Column Styling */
+footer .col {
+    margin-top: 40px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Text Styling  */
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    padding-bottom: 10px;
+}
+
+/* Image Styling */
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+    margin-right: 40px;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+     width: 130px;
+     height: 40px;
+}
+
+/* Hover Effects  */
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+/* Copyright Section Styling */
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    margin: 0;  /* Ensure no margin */
+    padding: 0;  /* Ensure no padding */
+    margin-top: 0;  /* Remove any top margin */
+    margin-top: 20px;
+}
+
+/* Utility Classes */
+.h-primary {
+    font-family: 'Bree Serif',serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+
+.h-secondary {
+    font-family: 'Bree Serif',serif;
+    font-size: 2.3rem;
+    padding: 12px;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 17px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button-link {
+    color: white;
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
+}
